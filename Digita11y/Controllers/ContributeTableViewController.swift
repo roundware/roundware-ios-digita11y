@@ -1,14 +1,7 @@
-//
-//  ContributeTableViewController.swift
-//  Digita11y
-//
-//  Created by Parveen Kaler on 2015-02-24.
-//  Copyright (c) 2015 Smartful Studios Inc. All rights reserved.
-//
-
 import UIKit
+import RWFramework
 
-class ContributeTableViewController: UITableViewController {
+class ContributeTableViewController: UITableViewController, RWFrameworkProtocol {
 
   enum Cell {
     case Artifact
@@ -48,7 +41,7 @@ class ContributeTableViewController: UITableViewController {
     let type = self.cells[indexPath.row]
     switch (type) {
     case .Artifact:
-      return tableView.dequeueReusableCellWithIdentifier("ArtifactCellIdentifier", forIndexPath: indexPath) as UITableViewCell
+      return tableView.dequeueReusableCellWithIdentifier("ArtifactCellIdentifier", forIndexPath: indexPath) as! UITableViewCell
     case .Audio:
       var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: CellIdentifier)
       cell.textLabel?.text = "Audio"
@@ -56,7 +49,11 @@ class ContributeTableViewController: UITableViewController {
       cell.selectionStyle = .None
       return cell
     case .AudioDrawer:
-      return tableView.dequeueReusableCellWithIdentifier(AudioDrawerCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+      var cell =  tableView.dequeueReusableCellWithIdentifier(AudioDrawerCellIdentifier, forIndexPath: indexPath) as! AudioDrawerTableViewCell
+      cell.recordButton.tag = indexPath.row
+      cell.recordButton.addTarget(self, action: "recordAudio:", forControlEvents: .TouchUpInside)
+      cell.uploadButton.addTarget(self, action: "uploadAudio", forControlEvents: .TouchUpInside)
+      return cell
     case .Photo:
       var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: CellIdentifier)
       cell.textLabel?.text = "Photos"
@@ -64,9 +61,11 @@ class ContributeTableViewController: UITableViewController {
       cell.selectionStyle = .None
       return cell
     case .PhotoDrawer:
-      var cell = tableView.dequeueReusableCellWithIdentifier(PhotoDrawerCellIdentifier, forIndexPath: indexPath) as PhotoDrawerTableViewCell
+      var cell = tableView.dequeueReusableCellWithIdentifier(PhotoDrawerCellIdentifier, forIndexPath: indexPath) as! PhotoDrawerTableViewCell
       cell.textView.placeholder = "Describe this photo..."
       cell.textView.placeholderTextColor = UIColor.lightGrayColor()
+      cell.cameraButton.addTarget(self, action: "cameraButton", forControlEvents: .TouchUpInside)
+      cell.libraryButton.addTarget(self, action: "libraryButton", forControlEvents: .TouchUpInside)
       return cell
     case .Text:
       var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: CellIdentifier)
@@ -75,7 +74,7 @@ class ContributeTableViewController: UITableViewController {
       cell.selectionStyle = .None
       return cell
     case .TextDrawer:
-      var cell = tableView.dequeueReusableCellWithIdentifier(TextDrawerCellIdentifier, forIndexPath: indexPath) as TextDrawerTableViewCell
+      var cell = tableView.dequeueReusableCellWithIdentifier(TextDrawerCellIdentifier, forIndexPath: indexPath) as! TextDrawerTableViewCell
       cell.textView.placeholder = "Write something..."
       cell.textView.placeholderTextColor = UIColor.lightGrayColor()
       return cell
@@ -115,6 +114,74 @@ class ContributeTableViewController: UITableViewController {
         self.tableView.beginUpdates()
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: i+1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Top)
         self.tableView.endUpdates()
+        return
+      }
+    }
+  }
+
+  func recordAudio(button: UIButton) {
+    var rwf = RWFramework.sharedInstance
+    rwf.delegate = self
+    if rwf.isRecording() {
+      rwf.stopRecording()
+    } else {
+      setupAudio() { granted, error in
+        debugPrintln("Audio granted: \(granted), Error: \(error)")
+        if granted && error == nil {
+          debugPrintln("Start recording")
+          rwf.startRecording()
+        }
+      }
+    }
+
+    var indexPath = NSIndexPath(forRow: button.tag, inSection: 0)
+    if let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? AudioDrawerTableViewCell {
+      cell.uploadButton.enabled = true
+      cell.uploadButton.setNeedsDisplay()
+    }
+  }
+
+  func uploadAudio() {
+    debugPrintln("uploadAudio")
+    var rwf = RWFramework.sharedInstance
+    rwf.delegate = self
+    rwf.addRecording()
+  }
+
+  func cameraButton() {
+    var rwf = RWFramework.sharedInstance
+    rwf.delegate = self
+    rwf.doImage()
+  }
+
+  func libraryButton() {
+    var rwf = RWFramework.sharedInstance
+    rwf.delegate = self
+    rwf.doPhotoLibrary()
+  }
+
+  func rwRecordingProgress(percentage: Double) {
+    for var i = 0; i < self.tableView.numberOfRowsInSection(0); ++i {
+      var indexPath = NSIndexPath(forRow: i, inSection: 0)
+      if let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? AudioDrawerTableViewCell {
+        cell.progressLabel.text = String(format:"%f", percentage)
+        return
+      }
+    }
+  }
+
+  func rwImagePickerControllerDidFinishPickingMedia(info: [NSObject : AnyObject]) {
+    for var i = 0; i < self.tableView.numberOfRowsInSection(0); ++i {
+      var indexPath = NSIndexPath(forRow: i, inSection: 0)
+      if let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? PhotoDrawerTableViewCell {
+        cell.textView.hidden = false
+        cell.photoView.hidden = false
+
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+          cell.photoView.image = image
+        } else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+          cell.photoView.image = image
+        }
         return
       }
     }

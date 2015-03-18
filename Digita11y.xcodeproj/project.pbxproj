@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E462A381AB7DFA600623B7E /* SetupAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E462A371AB7DFA600623B7E /* SetupAudio.swift */; };
+		4E462A391AB7DFA600623B7E /* SetupAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E462A371AB7DFA600623B7E /* SetupAudio.swift */; };
 		4E59466F1A9BB81B007ED02C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59466E1A9BB81B007ED02C /* AppDelegate.swift */; };
 		4E5946761A9BB81B007ED02C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5946741A9BB81B007ED02C /* Main.storyboard */; };
 		4E5946781A9BB81B007ED02C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E5946771A9BB81B007ED02C /* Images.xcassets */; };
@@ -21,6 +23,12 @@
 		4E59469C1A9D4BFA007ED02C /* ContributeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59469B1A9D4BFA007ED02C /* ContributeTableViewController.swift */; };
 		4E6ACDDD1AAE528400314A9F /* ContributeArtifactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ACDDC1AAE528400314A9F /* ContributeArtifactTableViewController.swift */; };
 		4E6ACDDE1AAE528400314A9F /* ContributeArtifactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ACDDC1AAE528400314A9F /* ContributeArtifactTableViewController.swift */; };
+		4E6C4ABE1AB2715500B5FEAC /* RWFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6C4ABB1AB2704100B5FEAC /* RWFramework.framework */; };
+		4E6C4ABF1AB2715500B5FEAC /* RWFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4E6C4ABB1AB2704100B5FEAC /* RWFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4E6C4AC41AB28D8700B5FEAC /* RWFramework.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6C4AC31AB28D8700B5FEAC /* RWFramework.plist */; };
+		4E6C4AC51AB28D8700B5FEAC /* RWFramework.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E6C4AC31AB28D8700B5FEAC /* RWFramework.plist */; };
+		4E6C4AC81AB2ADEA00B5FEAC /* AudioDrawerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C4AC71AB2ADEA00B5FEAC /* AudioDrawerTableViewCell.swift */; };
+		4E6C4AC91AB2ADEA00B5FEAC /* AudioDrawerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C4AC71AB2ADEA00B5FEAC /* AudioDrawerTableViewCell.swift */; };
 		4E6D9CB81AAE2A040002D543 /* MicrophoneLevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D9CB71AAE2A040002D543 /* MicrophoneLevelsView.swift */; };
 		4E6D9CB91AAE2A040002D543 /* MicrophoneLevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6D9CB71AAE2A040002D543 /* MicrophoneLevelsView.swift */; };
 		4EA3928C1A9FBCAD00308613 /* TextDrawerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA3928B1A9FBCAD00308613 /* TextDrawerTableViewCell.swift */; };
@@ -40,11 +48,47 @@
 			remoteGlobalIDString = 4E5946681A9BB81A007ED02C;
 			remoteInfo = Digita11y;
 		};
+		4E6C4ABA1AB2704100B5FEAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E6C4AB51AB2704100B5FEAC /* RWFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75A7D2D11A745B7400E662A8;
+			remoteInfo = RWFramework;
+		};
+		4E6C4ABC1AB2704100B5FEAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E6C4AB51AB2704100B5FEAC /* RWFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75A7D2DC1A745B7400E662A8;
+			remoteInfo = RWFrameworkTests;
+		};
+		4E6C4AC01AB2715500B5FEAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E6C4AB51AB2704100B5FEAC /* RWFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 75A7D2D01A745B7400E662A8;
+			remoteInfo = RWFramework;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4E6C4AC21AB2715500B5FEAC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4E6C4ABF1AB2715500B5FEAC /* RWFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D00D72D58B06AAFC88F3442 /* Pods-Digita11y.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digita11y.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Digita11y/Pods-Digita11y.debug.xcconfig"; sourceTree = "<group>"; };
 		2B7449CB3A4A9A0A5971C1B1 /* Pods-Digita11y.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digita11y.release.xcconfig"; path = "Pods/Target Support Files/Pods-Digita11y/Pods-Digita11y.release.xcconfig"; sourceTree = "<group>"; };
+		4E462A371AB7DFA600623B7E /* SetupAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetupAudio.swift; path = Operations/SetupAudio.swift; sourceTree = "<group>"; };
 		4E5946691A9BB81A007ED02C /* Digita11y.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digita11y.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E59466D1A9BB81B007ED02C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E59466E1A9BB81B007ED02C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -59,6 +103,9 @@
 		4E5946981A9D2095007ED02C /* BrowseDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = BrowseDetailTableViewController.swift; path = Controllers/BrowseDetailTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4E59469B1A9D4BFA007ED02C /* ContributeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = ContributeTableViewController.swift; path = Controllers/ContributeTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4E6ACDDC1AAE528400314A9F /* ContributeArtifactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContributeArtifactTableViewController.swift; path = Controllers/ContributeArtifactTableViewController.swift; sourceTree = "<group>"; };
+		4E6C4AB51AB2704100B5FEAC /* RWFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RWFramework.xcodeproj; path = "External/roundware-ios-framework-v2/RWFramework/RWFramework.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		4E6C4AC31AB28D8700B5FEAC /* RWFramework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RWFramework.plist; path = "External/roundware-ios-framework-v2/RWExample/RWExample/RWFramework.plist"; sourceTree = SOURCE_ROOT; };
+		4E6C4AC71AB2ADEA00B5FEAC /* AudioDrawerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioDrawerTableViewCell.swift; path = Views/AudioDrawerTableViewCell.swift; sourceTree = "<group>"; };
 		4E6D9CB71AAE2A040002D543 /* MicrophoneLevelsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MicrophoneLevelsView.swift; path = Views/MicrophoneLevelsView.swift; sourceTree = "<group>"; };
 		4EA3928B1A9FBCAD00308613 /* TextDrawerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextDrawerTableViewCell.swift; path = Views/TextDrawerTableViewCell.swift; sourceTree = "<group>"; };
 		4EA3928E1A9FBDBC00308613 /* Digita11y-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Digita11y-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -72,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6C4ABE1AB2715500B5FEAC /* RWFramework.framework in Frameworks */,
 				A258A79619066C709E276516 /* libPods-Digita11y.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +134,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E462A351AB7DF8400623B7E /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				4E462A371AB7DFA600623B7E /* SetupAudio.swift */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		4E5946601A9BB81A007ED02C = {
 			isa = PBXGroup;
 			children = (
@@ -109,8 +165,10 @@
 		4E59466B1A9BB81A007ED02C /* Digita11y */ = {
 			isa = PBXGroup;
 			children = (
+				4E6C4AB41AB2703B00B5FEAC /* External */,
 				4E5946941A9BE966007ED02C /* Views */,
 				4E5946931A9BBFBD007ED02C /* Controllers */,
+				4E462A351AB7DF8400623B7E /* Operations */,
 				4E59466E1A9BB81B007ED02C /* AppDelegate.swift */,
 				4EA3928E1A9FBDBC00308613 /* Digita11y-Bridging-Header.h */,
 				4E5946771A9BB81B007ED02C /* Images.xcassets */,
@@ -162,11 +220,30 @@
 				4E5946791A9BB81B007ED02C /* LaunchScreen.xib */,
 				4E5946951A9BE9A5007ED02C /* BrowseTableViewCell.swift */,
 				4EF024771AA1288600F93604 /* BrowseDetailTableViewCell.swift */,
+				4E6C4AC71AB2ADEA00B5FEAC /* AudioDrawerTableViewCell.swift */,
+				4E6D9CB71AAE2A040002D543 /* MicrophoneLevelsView.swift */,
 				4EA3928B1A9FBCAD00308613 /* TextDrawerTableViewCell.swift */,
 				4EA3928F1A9FC2E800308613 /* PhotoDrawerTableViewCell.swift */,
-				4E6D9CB71AAE2A040002D543 /* MicrophoneLevelsView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		4E6C4AB41AB2703B00B5FEAC /* External */ = {
+			isa = PBXGroup;
+			children = (
+				4E6C4AC31AB28D8700B5FEAC /* RWFramework.plist */,
+				4E6C4AB51AB2704100B5FEAC /* RWFramework.xcodeproj */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		4E6C4AB61AB2704100B5FEAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E6C4ABB1AB2704100B5FEAC /* RWFramework.framework */,
+				4E6C4ABD1AB2704100B5FEAC /* RWFrameworkTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		5D2900C9F3F2E43C9F1D7A3B /* Frameworks */ = {
@@ -198,10 +275,12 @@
 				4E5946661A9BB81A007ED02C /* Frameworks */,
 				4E5946671A9BB81A007ED02C /* Resources */,
 				B1B34116A1B07E17B5705909 /* Copy Pods Resources */,
+				4E6C4AC21AB2715500B5FEAC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4E6C4AC11AB2715500B5FEAC /* PBXTargetDependency */,
 			);
 			name = Digita11y;
 			productName = Digita11y;
@@ -257,6 +336,12 @@
 			mainGroup = 4E5946601A9BB81A007ED02C;
 			productRefGroup = 4E59466A1A9BB81A007ED02C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4E6C4AB61AB2704100B5FEAC /* Products */;
+					ProjectRef = 4E6C4AB51AB2704100B5FEAC /* RWFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4E5946681A9BB81A007ED02C /* Digita11y */,
@@ -265,6 +350,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		4E6C4ABB1AB2704100B5FEAC /* RWFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RWFramework.framework;
+			remoteRef = 4E6C4ABA1AB2704100B5FEAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E6C4ABD1AB2704100B5FEAC /* RWFrameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RWFrameworkTests.xctest;
+			remoteRef = 4E6C4ABC1AB2704100B5FEAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		4E5946671A9BB81A007ED02C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -272,6 +374,7 @@
 			files = (
 				4E5946761A9BB81B007ED02C /* Main.storyboard in Resources */,
 				4E59467B1A9BB81B007ED02C /* LaunchScreen.xib in Resources */,
+				4E6C4AC41AB28D8700B5FEAC /* RWFramework.plist in Resources */,
 				4E5946781A9BB81B007ED02C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E6C4AC51AB28D8700B5FEAC /* RWFramework.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,11 +431,13 @@
 				4E5946961A9BE9A5007ED02C /* BrowseTableViewCell.swift in Sources */,
 				4EA3928C1A9FBCAD00308613 /* TextDrawerTableViewCell.swift in Sources */,
 				4EF024781AA1288600F93604 /* BrowseDetailTableViewCell.swift in Sources */,
+				4E6C4AC81AB2ADEA00B5FEAC /* AudioDrawerTableViewCell.swift in Sources */,
 				4E59466F1A9BB81B007ED02C /* AppDelegate.swift in Sources */,
 				4EA392901A9FC2E800308613 /* PhotoDrawerTableViewCell.swift in Sources */,
 				4E5946911A9BBFB7007ED02C /* BrowseTableViewController.swift in Sources */,
 				4E6D9CB81AAE2A040002D543 /* MicrophoneLevelsView.swift in Sources */,
 				4E59469C1A9D4BFA007ED02C /* ContributeTableViewController.swift in Sources */,
+				4E462A381AB7DFA600623B7E /* SetupAudio.swift in Sources */,
 				4E5946991A9D2095007ED02C /* BrowseDetailTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +455,8 @@
 				4E5946971A9BE9A5007ED02C /* BrowseTableViewCell.swift in Sources */,
 				4EA3928D1A9FBCAD00308613 /* TextDrawerTableViewCell.swift in Sources */,
 				4E6D9CB91AAE2A040002D543 /* MicrophoneLevelsView.swift in Sources */,
+				4E6C4AC91AB2ADEA00B5FEAC /* AudioDrawerTableViewCell.swift in Sources */,
+				4E462A391AB7DFA600623B7E /* SetupAudio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +467,11 @@
 			isa = PBXTargetDependency;
 			target = 4E5946681A9BB81A007ED02C /* Digita11y */;
 			targetProxy = 4E5946811A9BB81B007ED02C /* PBXContainerItemProxy */;
+		};
+		4E6C4AC11AB2715500B5FEAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RWFramework;
+			targetProxy = 4E6C4AC01AB2715500B5FEAC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -474,6 +587,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Digita11y/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Smartful Studios Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Smartful Studios Inc.";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Digita11y/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

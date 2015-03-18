@@ -1,0 +1,4 @@
+[submodule "External/roundware-ios-framework-v2"]
+	path = External/roundware-ios-framework-v2
+	url = git@github.com:hburgund/roundware-ios-framework-v2.git
+	branch = develop
