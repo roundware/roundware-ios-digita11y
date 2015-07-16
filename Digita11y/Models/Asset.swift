@@ -13,6 +13,7 @@ private var TextCache = [String:String]()
 
 struct Asset {
   var assetDescription = ""
+  var submitted: Bool = false
   var volume = 0
   var project = 0
   var assetID = 0
@@ -28,6 +29,7 @@ struct Asset {
 
   init(json: JSON) {
     assetDescription = json["description"].string ?? ""
+    submitted = json["submitted"].boolValue ?? false
     volume = json["volume"].int ?? 0
     project = json["project"].int ?? 0
     assetID = json["asset_id"].int ?? 0
