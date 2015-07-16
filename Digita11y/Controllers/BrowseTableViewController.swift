@@ -38,6 +38,7 @@ class BrowseTableViewController: BaseTableViewController, RWFrameworkProtocol {
       cell.tag = self.exhibitionViewModel?.IDForIndex(indexPath.row) ?? 0
       cell.titleLabel.text = self.exhibitionViewModel?.titleForIndex(indexPath.row) ?? ""
       cell.accessibilityLabel = self.exhibitionViewModel?.accessibilityLabelForIndex(indexPath.row) ?? ""
+      cell.accessibilityTraits = UIAccessibilityTraitButton;
       cell.bannerImageView.sd_setImageWithURL(self.exhibitionViewModel?.imageURLForIndex(indexPath.row), placeholderImage: UIImage(named:"browse-cell"))
 
       return cell

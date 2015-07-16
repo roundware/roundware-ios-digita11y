@@ -11,7 +11,7 @@ func requestAssets(completion: (assets: [Asset]) -> ()) {
       if (data != nil) {
         let json = JSON(data: data!)
         let assets = json.array?.map { Asset(json: $0) } ?? []
-        completion(assets: assets)
+        completion(assets: assets.filter { $0.submitted })
       }
       }) { (error) -> Void in
         debugPrintln(error.localizedDescription)
