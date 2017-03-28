@@ -11,7 +11,7 @@ class ChooseExhibitViewModel: BaseViewModel  {
         didSet {
             self.uiGroup.selectedUIItem = self.uiGroup.uiItems.filter({$0.tagId == self.selectedTag!.id}).first
             data.updateUIGroup(self.uiGroup)
-            DebugLog("selected ui item for exhibitions uigroup at index \(self.uiGroup.index) set to \(self.uiGroup.selectedUIItem)")
+            DebugLog("selected ui item for exhibitions uigroup at index \(self.uiGroup.index) set to \(String(describing: self.uiGroup.selectedUIItem))")
         }
     }
 

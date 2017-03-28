@@ -668,7 +668,7 @@ class RoomsViewController: BaseViewController, RWFrameworkProtocol, AKPickerView
             guard let assetID = queryItems["asset"],
             let thisAsset = self.viewModel.data.getAssetById(Int(assetID)!)
                 else{
-                DebugLog("missing assetID \(queryItems["asset"])")
+                DebugLog("missing assetID \(String(describing: queryItems["asset"]))")
                 return
             }
 

@@ -53,7 +53,7 @@ class RootNavigationViewController: UINavigationController, UINavigationControll
 
 
     func rwGetProjectsIdTagsSuccess( data: NSData?) {
-        let json = JSON(data: data as! Data)
+        let json = JSON(data: data! as Data)
         self.rwData?.tags = json["tags"].array?.map { Tag(json: $0) } ?? []
     }
 
@@ -76,7 +76,7 @@ class RootNavigationViewController: UINavigationController, UINavigationControll
     }
 
     func rwGetAssetsSuccess( data: NSData?) {
-        let json = JSON(data: data as! Data)
+        let json = JSON(data: data! as Data)
         self.rwData?.assets = json.array?.map { Asset(json: $0) } ?? []
 //        debugPrint("assets json received")
 //        dump(self.rwData?.assets)

@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import ImageScrollView
 class MapViewController: BaseViewController {
     var viewModel: MapViewModel!
 
     // MARK: Outlets and Actions
 
-    @IBOutlet weak var imageScrollView: ImageScrollView!
-
+    @IBOutlet weak var imageView: UIImageView!
+    
     @IBAction func close(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "closeMap", sender: sender)
     }
@@ -28,10 +27,15 @@ class MapViewController: BaseViewController {
         
         let url = URL(string: self.viewModel.mapURL)
         DispatchQueue.global(qos: .default).async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-            DispatchQueue.main.async(execute: {
-                self.imageScrollView.display(image: UIImage(data: data!)!)
-            });
+            if let data = try? Data(contentsOf: url!) {
+                if let image = UIImage.init(data: data) {
+                    if let rotatedImage = UIImage(cgImage: image.cgImage!, scale: UIScreen.main.scale, orientation: .right) as UIImage? {
+                        DispatchQueue.main.async(execute: {
+                            self.imageView.image = rotatedImage
+                        });
+                    }
+                }
+            }
         }
     }
 }

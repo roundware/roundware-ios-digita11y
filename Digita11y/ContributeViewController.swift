@@ -143,7 +143,7 @@ class ContributeViewController: BaseViewController, UIScrollViewDelegate, UIText
         if(viewModel.mediaType == MediaType.audio){
             setupAudio() { granted, error in
                 if granted == false {
-                    DebugLog("Unable to setup audio: \(error)")
+                    DebugLog("Unable to setup audio: \(String(describing: error))")
                     if let error = error {
                         DebugLog("Unable to setup audio: \(error)")
                     }
