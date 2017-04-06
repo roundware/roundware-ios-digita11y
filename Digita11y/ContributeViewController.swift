@@ -189,6 +189,11 @@ class ContributeViewController: BaseViewController, UIScrollViewDelegate, UIText
     @IBAction func upload(_ sender: AnyObject) {
         let rwf = RWFramework.sharedInstance
 
+        if (rwf.isPlayingBack()) {
+            rwf.stopPlayback()
+            displayPreviewAudio()
+        }
+
         //images
 //        for image in self.viewModel.images {
 //            rwf.setImageDescription(image.path, description: image.text)
